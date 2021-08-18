@@ -6,6 +6,17 @@
 #include <sys/types.h>
 #include "shell.h"
 
+
+int getStringLength(char *string)
+{
+	int i = 0;
+	while (string[i])
+	{
+		i++;
+	}
+}
+
+
 int countPipes(char text[]){ /*verificamos si hay pipes*/
 	if(strchr(text, '|')!=NULL){
 		return (1);

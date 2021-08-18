@@ -8,6 +8,6 @@
 #include <wait.h>
 #include <sys/types.h>
 
-int gestStringLength(char *string);
+int getStringLength(char *string);
 
 #endif
