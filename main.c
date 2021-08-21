@@ -14,12 +14,25 @@
 
 int main(int argc, char **argv)
 {
-  /* config */
+/* config */
+/* loop for commands */
 
-  /* loop for commands */
-  lsh_loop();
+	int state
+	char *input
+	char **args
 
-  /* cleanup, free memory, etc */
+	do
+	{
+	/* define prompt */
+	input = read_input();
+	args = break_input(input);
+	state = run_command(args);
 
-  return EXIT_SUCCESS;
+	/* cleanup, free memory, etc */
+	free(input);
+	free(args);
+	}
+	while (state);
+
+return EXIT_SUCCESS;
 }
