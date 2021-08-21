@@ -4,6 +4,11 @@
 * Date: August 21, 2021
 */
 
+#include <string.h>
+#include <stdlib.h>
+#include <wait.h>
+#include <stdio.h>
+
 /**
 * main - Entry point
 * @argc: int
@@ -25,7 +30,9 @@ int main(int argc, char **argv)
 	{
 	/* define prompt */
 	input = read_input();
+	/* start tokenization process */
 	args = break_input(input);
+	/* obtain info to break the loop */
 	state = run_command(args);
 
 	/* cleanup, free memory, etc */
