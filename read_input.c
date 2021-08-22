@@ -4,6 +4,8 @@
 * Date: August 21, 2021
 */
 
+#include "simple_shell.h"
+
 /**
 * read_input - Reads stdin
 * Return: Char
