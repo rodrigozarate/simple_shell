@@ -4,10 +4,7 @@
 * Date: August 21, 2021
 */
 
-#include <string.h>
-#include <stdlib.h>
-#include <wait.h>
-#include <stdio.h>
+#include "simple_shell.h"
 
 /**
 * main - Entry point

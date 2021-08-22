@@ -4,6 +4,8 @@
 * Date: August 22, 2021
 */
 
+#include "simple_shell.h"
+
 /**
 * rocket - launcher system
 * @args: char
@@ -33,13 +35,10 @@ pid = fork();
 	else
 	{
 		/* Parent process */
-		do
-		{
+		do {
 			w_pid = waitpid(pid, &state, WUNTRACED);
-		} 
-		while (!WIFEXITED(state) && !WIFSIGNALED(state));
+		} while (!WIFEXITED(state) && !WIFSIGNALED(state));
 	}
-
+/* always 1 */
 return (1);
 }
-
