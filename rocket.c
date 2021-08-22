@@ -16,12 +16,13 @@ int rocket(char **args)
 {
 pid_t pid, w_pid;
 int state;
+char *env[] = environ;
 
 pid = fork();
 	if (pid == 0)
 	{
     	/* its child */
-		if (execvp(args[0], args) == -1)
+		if (execve(args[0], args, env) == -1)
 		{
       			perror("No argument");
 		}
