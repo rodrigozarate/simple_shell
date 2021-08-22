@@ -16,7 +16,6 @@
 * Return: EXIT_SUCCESS
 */
 
-
 int main(int argc, char **argv)
 {
 /* config */
@@ -26,8 +25,7 @@ int main(int argc, char **argv)
 	char *input
 	char **args
 
-	do
-	{
+	do {
 	/* define prompt */
 	input = read_input();
 	/* start tokenization process */
@@ -38,8 +36,7 @@ int main(int argc, char **argv)
 	/* cleanup, free memory, etc */
 	free(input);
 	free(args);
-	}
-	while (state);
+	} while (state);
 
-return EXIT_SUCCESS;
+return (EXIT_SUCCESS);
 }
