@@ -17,8 +17,22 @@ int main(){
 	while (1) /*mientras sea interactivo*/
 	{
 		if (isatty(STDIN_FILENO))
-		write(STDOUT_FILENO, prompt, getStringLength(prompt)); /*escribimos la linea de texto y la mostramos en el prompt*/
-		charactersRead = getline(&text, &textSize, stdin); /*guardamos la linea en la variable text*/
+		write(STDOUT_FILENO, prompt, getStringLength(prompt)); /*imprime signo del promp y lo muestra por pantalla*/
+		charactersRead = getline(&text, &textSize, stdin); /*guardamos la linea de texto en la variable text..  */
+		if (text != NULL)
+		{
+			void split(char text[], char *splittedtext[], char DELIM[]){ /*dividimos el texto en 2: en antes de .. y en despues de...*/
+			char *tokenpointer;
+			int i = 0;
+			tokenpointer = strtok(text, DELIM);
+
+			while(tokenpointer != NULL){
+				splittedtext[i] = tokenpointer;
+				tokenpointer = strtok(NULL, DELIM);
+				i++;
+			}
+		}
+
 		pid_t pid = fork();/*creamos un proceso hijo, c/proceso tendra una salida distinta*/
 		if(pid == -1)
 		{
