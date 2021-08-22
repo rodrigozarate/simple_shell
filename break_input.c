@@ -4,6 +4,8 @@
 * Date: August 22, 2021
 */
 
+#include "simple_shell.h"
+
 #define TOKEN_BUFFER 64
 #define TOKEN_DELIMITATOR " \a\r\t\n"
 
@@ -16,12 +18,12 @@
 char **break_input(char *input)
 {
 int buffertoken = TOKEN_BUFFER, position = 0;
-char **alltokens = malloc(buffertoken * sizeof(char*));
+char **alltokens = malloc(buffertoken * sizeof(char *));
 char *token;
 
 	if (!alltokens)
 	{
-		fprintf(stderr, "Malloc fails\n");
+		fprintf(stderr, "Null, Malloc failure\n");
 		exit(EXIT_FAILURE);
 	}
 
@@ -29,15 +31,16 @@ char *token;
 	while (token != NULL)
 	{
 		alltokens[position] = token;
+		printf("tok: %s", alltokens[position]);
 		position++;
 
 		if (position >= buffertoken)
 		{
 			buffertoken += TOKEN_BUFFER;
-			alltokens = realloc(alltokens, buffertoken * sizeof(char*));
+			alltokens = realloc(alltokens, buffertoken * sizeof(char *));
 			if (!alltokens)
 			{
-				fprintf(stderr, "Malloc fails\n");
+				fprintf(stderr, "Realloc, Malloc failure\n");
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -45,5 +48,6 @@ char *token;
 	}
 /* end */
 alltokens[position] = NULL;
-return tokens;
+/* send to execute command */
+return (alltokens);
 }
