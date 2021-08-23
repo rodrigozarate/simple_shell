@@ -7,8 +7,13 @@
 #include <stdio.h>
 #include <sys/types.h>
 
+extern char **environ;
+extern int errno;
+
 char *read_input(void);
 char **break_input(char *input);
 int rocket(char **args);
+int run_command(char **args);
+int builtins(void);
 
 #endif /* SIMPLE_SHELL_H */
