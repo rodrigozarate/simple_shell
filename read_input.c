@@ -19,6 +19,8 @@ ssize_t bufferinput = 0;
 	/* check if getline works */
 	if (getline(&input, &bufferinput, stdin) == -1)
 	{
+		/* non zero if is set */
+		/* change verification method */
 		if (feof(stdin))
 		{
 			/* reach the end */
