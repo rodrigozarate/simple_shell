@@ -15,6 +15,12 @@ char *read_input(void);
 char **break_input(char *input);
 int rocket(char **args);
 int run_command(char **args);
+int bi_env(char **args);
+int bi_exit(char **args);
 int builtins(void);
+
+char *builtinlist[] = {"env", "exit"};
+
+int (*builtinfunc[])(char **) = {&bi_env, &bi_exit};
 
 #endif /* SIMPLE_SHELL_H */
