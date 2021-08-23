@@ -7,6 +7,30 @@
 #include "simple_shell.h"
 
 /**
+* bi_exit - exit
+* @args: double poniter
+* Return: always zero
+*/
+
+int bi_exit(char **args)
+{
+	return (0);
+}
+
+/**
+* bi_env - gets environ vars
+* @args: double poniter
+* Return: always zero
+*/
+
+int bi_env(char **args)
+{
+	/* get the environ */
+	/* print the environ */
+	return (0);
+}
+
+/**
 * main - Entry point
 * @argc: int
 * @argv: char double pointer
@@ -21,6 +45,9 @@ int main(int argc, char **argv)
 	int state
 	char *input
 	char **args
+	char *builtinlist[] = {"env", "exit"};
+
+	int (*builtinfunc[])(char **) = {&bi_env, &bi_exit};
 
 	do {
 	/* define prompt */
