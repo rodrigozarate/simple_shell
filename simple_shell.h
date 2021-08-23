@@ -6,6 +6,7 @@
 #include <sys/wait.h>
 #include <stdio.h>
 #include <sys/types.h>
+#include <unistd.h>
 
 extern char **environ;
 extern int errno;
