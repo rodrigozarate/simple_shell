@@ -21,27 +21,29 @@ int buffertoken = TOKEN_BUFFER, position = 0;
 char **alltokens = malloc(buffertoken * sizeof(char *));
 char *token;
 
+printf("inside break_input-0\n");
+
 	if (!alltokens)
 	{
-		fprintf(stderr, "Null, Malloc failure\n");
 		exit(EXIT_FAILURE);
 	}
 
 	token = strtok(input, TOKEN_DELIMITATOR);
 	while (token != NULL)
 	{
+		printf("inside break_input-1\n");
 		alltokens[position] = token;
-		printf("tok: %s", alltokens[position]);
+		printf("tok: %s \n", alltokens[position]);
 		position++;
 
 		if (position >= buffertoken)
 		{
+			printf("inside break_input-2\n");
 			buffertoken += TOKEN_BUFFER;
 			/* change realloc as is forbiden */
 			alltokens = realloc(alltokens, buffertoken * sizeof(char *));
 			if (!alltokens)
 			{
-				fprintf(stderr, "Realloc, Malloc failure\n");
 				exit(EXIT_FAILURE);
 			}
 		}

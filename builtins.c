@@ -13,5 +13,6 @@
 
 int builtins(char **builtinlist)
 {
+	printf("inside builtins\n");
 	return (sizeof(builtinlist) / sizeof(char *));
 }

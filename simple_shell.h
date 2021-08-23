@@ -1,7 +1,7 @@
 #ifndef SIMPLE_SHELL_H
 #define SIMPLE_SHELL_H
 
-#define JR_PROMPT = "$ ";
+#define JR_PROMPT "$ "
 
 #include <string.h>
 #include <stdlib.h>
