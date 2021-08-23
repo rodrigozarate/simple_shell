@@ -13,7 +13,5 @@
 
 int builtins()
 {
-char *builtinlist[] = {"env", "exit", "help"}
-
 	return (sizeof(builtinlist) / sizeof(char *));
 }
