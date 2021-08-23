@@ -1,4 +1,4 @@
-/**
+/*
 * rocket.c - Launch selected functions
 * Author: Rodrigo Zárate Algecira and Joana Casallas
 * Date: August 22, 2021
@@ -21,17 +21,17 @@ char *env[] = environ;
 pid = fork();
 	if (pid == 0)
 	{
-    	/* its child */
+		/* its child */
 		if (execve(args[0], args, env) == -1)
 		{
-      			perror("No argument");
+			perror("No argument");
 		}
 		exit(EXIT_FAILURE);
 	}
 	else if (pid < 0)
 	{
 		/* forking failed */
-    		perror("Fork failed");
+		perror("Fork failed");
 	}
 	else
 	{
