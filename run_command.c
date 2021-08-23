@@ -24,10 +24,10 @@ int i;
 	/* walk array of builtins */
 	for (i = 0; i < builtins(); i++)
 	{
-		if (strcmp(args[0], builtin_name[i]) == 0)
+		if (strcmp(args[0], builtinlist[i]) == 0)
 		{
 			/* set the corresponding function */
-			return ((*builtin_function[i])(args));
+			return ((*builtinfunc[i])(args));
 		}
 	}
 /* ignition secuence started */
