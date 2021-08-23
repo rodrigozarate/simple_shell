@@ -11,7 +11,7 @@
 * Return: int
 */
 
-int builtins()
+int builtins(char **builtinlist)
 {
 	return (sizeof(builtinlist) / sizeof(char *));
 }

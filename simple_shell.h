@@ -1,6 +1,8 @@
 #ifndef SIMPLE_SHELL_H
 #define SIMPLE_SHELL_H
 
+#define JR_PROMPT = "$ ";
+
 #include <string.h>
 #include <stdlib.h>
 #include <sys/wait.h>
@@ -14,13 +16,9 @@ extern int errno;
 char *read_input(void);
 char **break_input(char *input);
 int rocket(char **args);
-int run_command(char **args);
+int run_command(char **args, char **builtinlist);
 int bi_env(char **args);
 int bi_exit(char **args);
-int builtins(void);
-
-char *builtinlist[] = {"env", "exit"};
-
-int (*builtinfunc[])(char **) = {&bi_env, &bi_exit};
+int builtins(char **builtinlist);
 
 #endif /* SIMPLE_SHELL_H */

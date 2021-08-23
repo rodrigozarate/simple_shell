@@ -42,24 +42,24 @@ int main(int argc, char **argv)
 /* config */
 /* loop for commands */
 
-	int state
-	char *input
-	char **args
+	int state;
+	char *input;
+	char **args;
 	char *builtinlist[] = {"env", "exit"};
-
-	int (*builtinfunc[])(char **) = {&bi_env, &bi_exit};
 
 	do {
 	/* define prompt */
+	printf("JR_PROMPT");
 	input = read_input();
 	/* start tokenization process */
 	args = break_input(input);
 	/* obtain info to break the loop */
-	state = run_command(args);
+	state = run_command(args, builtinlist);
 
 	/* cleanup, free memory, etc */
 	free(input);
 	free(args);
+	printf("JR_PROMPT");
 	} while (state);
 
 return (EXIT_SUCCESS);
