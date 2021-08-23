@@ -37,6 +37,7 @@ char *token;
 		if (position >= buffertoken)
 		{
 			buffertoken += TOKEN_BUFFER;
+			/* change realloc as is forbiden */
 			alltokens = realloc(alltokens, buffertoken * sizeof(char *));
 			if (!alltokens)
 			{
