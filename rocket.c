@@ -25,7 +25,7 @@ char **env = environ;
 		/* its child */
 		if (execve(args[0], args, env) == -1)
 		{
-			perror("No argument");
+			perror("Error");
 		}
 		exit(EXIT_FAILURE);
 	}
