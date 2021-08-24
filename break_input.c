@@ -31,7 +31,6 @@ char *token;
 	while (token != NULL)
 	{
 		alltokens[position] = token;
-		printf("tok: %s \n", alltokens[position]);
 		position++;
 
 		if (position >= buffertoken)
