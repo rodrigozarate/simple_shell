@@ -6,7 +6,7 @@
 
 #include "simple_shell.h"
 
-#define TOKEN_BUFFER 64
+#define TOKEN_BUFFER 128
 #define TOKEN_DELIMITATOR " \a\r\t\n"
 
 /**
@@ -19,9 +19,8 @@ char **break_input(char *input)
 {
 int buffertoken = TOKEN_BUFFER, position = 0;
 char **alltokens = malloc(buffertoken * sizeof(char *));
+char **talltok;
 char *token;
-
-printf("inside break_input-0\n");
 
 	if (!alltokens)
 	{
@@ -31,17 +30,20 @@ printf("inside break_input-0\n");
 	token = strtok(input, TOKEN_DELIMITATOR);
 	while (token != NULL)
 	{
-		printf("inside break_input-1\n");
 		alltokens[position] = token;
 		printf("tok: %s \n", alltokens[position]);
 		position++;
 
 		if (position >= buffertoken)
 		{
-			printf("inside break_input-2\n");
 			buffertoken += TOKEN_BUFFER;
-			/* change realloc as is forbiden */
-			alltokens = realloc(alltokens, buffertoken * sizeof(char *));
+			talltok = malloc(buffertoken * sizeof(char *));
+			talltok = alltokens;
+			free(alltokens);
+			/* new size */
+			alltokens = malloc(buffertoken * sizeof(char *));
+			alltokens = talltok;
+			free(talltok);
 			if (!alltokens)
 			{
 				exit(EXIT_FAILURE);
