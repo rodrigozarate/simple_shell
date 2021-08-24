@@ -18,9 +18,10 @@ pid_t pid, w_pid;
 int state;
 char **env = environ;
 
-pid = fork();
+	pid = fork();
 	if (pid == 0)
 	{
+		/* on path args should be changed */
 		/* its child */
 		if (execve(args[0], args, env) == -1)
 		{
