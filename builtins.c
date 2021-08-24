@@ -13,5 +13,6 @@
 
 int builtins(char **builtinlist)
 {
+	/* size of list in chars */
 	return (sizeof(builtinlist) / sizeof(char *));
 }

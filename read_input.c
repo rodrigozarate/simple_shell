@@ -15,13 +15,14 @@ char *read_input(void)
 {
 char *input = NULL;
 size_t bufferinput = 0;
+ssize_t readchar;
 
 	/* check if getline works */
-	if (getline(&input, &bufferinput, stdin) == -1)
+	if ((readchar = getline(&input, &bufferinput, stdin)) == -1)
 	{
 		/* non zero if is set */
 		/* change verification method */
-		if (feof(stdin))
+		if (readchar == EOF)
 		{
 			/* reach the end */
 			exit(EXIT_SUCCESS);

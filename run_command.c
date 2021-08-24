@@ -25,10 +25,10 @@ int (*builtinfunc[])(char **) = {&bi_env, &bi_exit};
 		return (1);
 	}
 	/* walk array of builtins */
-	for (i = 0; i < builtins(builtinlist); i++)
+	for (i = 0; i <= builtins(builtinlist); i++)
 	{
 		/* 0, if the s1 and s2 are equal */
-		if (strcmp(args[0], builtinlist[i]) == 0)
+		if (str_comp(args[0], builtinlist[i]) == 0)
 		{
 			/* set the corresponding function */
 			return ((*builtinfunc[i])(args));
@@ -36,5 +36,4 @@ int (*builtinfunc[])(char **) = {&bi_env, &bi_exit};
 	}
 /* ignition secuence started */
 return (rocket(args));
-
 }

@@ -9,7 +9,7 @@
 /**
 * bi_exit - exit
 * @args: double poniter
-* Return: always zero
+* Return: always zero to change state
 */
 
 int bi_exit(char **args)
@@ -25,9 +25,20 @@ int bi_exit(char **args)
 
 int bi_env(char **args)
 {
+int i = 0;
+int str_len;
+
 	/* get the environ */
-	/* print the environ */
-	return (0);
+	while(environ[i] != NULL)
+	{
+		 /* walk the environ to count */
+		str_len = countstr(environ[i]);
+		/* print the environ */
+		write(1, environ[i], str_len);
+		write(1, "\n", 2);
+		i++;
+	}
+	return (1);
 }
 
 /**
@@ -49,17 +60,17 @@ int main(int argc, char **argv)
 
 	do {
 	/* define prompt */
-	printf("JR_PROMPT");
+	write(1, JR_PROMPT, 2);
 	input = read_input();
 	/* start tokenization process */
 	args = break_input(input);
 	/* obtain info to break the loop */
 	state = run_command(args, builtinlist);
-
+	
 	/* cleanup, free memory, etc */
 	free(input);
 	free(args);
-	printf("JR_PROMPT");
+	/* again */
 	} while (state);
 
 return (EXIT_SUCCESS);
