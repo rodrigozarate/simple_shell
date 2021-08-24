@@ -14,6 +14,8 @@
 
 int bi_exit(char **args)
 {
+char **w_args;
+w_args = args;
 	return (0);
 }
 
@@ -27,9 +29,11 @@ int bi_env(char **args)
 {
 int i = 0;
 int str_len;
+char **w_args;
+w_args = args;
 
 	/* get the environ */
-	while(environ[i] != NULL)
+	while (environ[i] != NULL)
 	{
 		 /* walk the environ to count */
 		str_len = countstr(environ[i]);
@@ -57,6 +61,11 @@ int main(int argc, char **argv)
 	char *input;
 	char **args;
 	char *builtinlist[] = {"env", "exit"};
+	int h_args;
+	char **h_argv;
+
+h_args = argc;
+h_argv = argv;
 
 	do {
 	/* define prompt */
@@ -66,7 +75,7 @@ int main(int argc, char **argv)
 	args = break_input(input);
 	/* obtain info to break the loop */
 	state = run_command(args, builtinlist);
-	
+
 	/* cleanup, free memory, etc */
 	free(input);
 	free(args);
