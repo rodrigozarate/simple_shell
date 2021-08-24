@@ -20,5 +20,6 @@ int run_command(char **args, char **builtinlist);
 int bi_env(char **args);
 int bi_exit(char **args);
 int builtins(char **builtinlist);
+int countstr(char *string);
 
 #endif /* SIMPLE_SHELL_H */
