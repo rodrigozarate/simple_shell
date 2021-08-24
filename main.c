@@ -14,7 +14,6 @@
 
 int bi_exit(char **args)
 {
-	printf("inside exit-0\n");
 	return (0);
 }
 
@@ -27,13 +26,15 @@ int bi_exit(char **args)
 int bi_env(char **args)
 {
 int i = 0;
+int str_len;
 
-printf("inside env-0\n");
 	/* get the environ */
-	/* print the environ */
-	while(i < 10)
+	while(environ[i] != NULL)
 	{
-		write(1, environ[i], 20);
+		 /* walk the environ to count */
+		str_len = countstr(environ[i]);
+		/* print the environ */
+		write(1, environ[i], str_len);
 		write(1, "\n", 2);
 		i++;
 	}
@@ -65,7 +66,7 @@ int main(int argc, char **argv)
 	args = break_input(input);
 	/* obtain info to break the loop */
 	state = run_command(args, builtinlist);
-	printf("state: %i", state);
+	
 	/* cleanup, free memory, etc */
 	free(input);
 	free(args);
