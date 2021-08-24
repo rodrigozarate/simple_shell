@@ -20,6 +20,9 @@ int run_command(char **args, char **builtinlist);
 int bi_env(char **args);
 int bi_exit(char **args);
 int builtins(char **builtinlist);
+/* util */
 int countstr(char *string);
+int str_comp(char *str_a, char *str_b);
+/* to do PATH */
 
 #endif /* SIMPLE_SHELL_H */
