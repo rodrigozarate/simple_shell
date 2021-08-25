@@ -68,7 +68,7 @@ int main(void)
 	state = run_command(args, builtinlist);
 
 	/* cleanup, free memory, etc */
-	
+
 	free(args);
 	/* again */
 	} while (state);
