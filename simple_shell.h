@@ -17,8 +17,8 @@ char *read_input(void);
 char **break_input(char *input);
 int rocket(char **args);
 int run_command(char **args, char **builtinlist);
-int bi_env(char **args);
-int bi_exit(char **args);
+int bi_env(void);
+int bi_exit(void);
 int builtins(char **builtinlist);
 /* util */
 int countstr(char *string);
