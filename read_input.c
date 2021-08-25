@@ -8,6 +8,8 @@
 
 /**
 * read_input - Reads stdin
+* @input: char double pointer
+* @bufferinput: size_t pointer
 * Return: Char
 */
 

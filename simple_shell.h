@@ -14,7 +14,7 @@ extern char **environ;
 extern int errno;
 
 /* char *read_input(void); */
-char *read_input(char **input,size_t *bufferinput);
+char *read_input(char **input, size_t *bufferinput);
 char **break_input(char *input);
 int rocket(char **args);
 int run_command(char **args, char **builtinlist);
