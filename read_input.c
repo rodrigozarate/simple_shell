@@ -11,29 +11,17 @@
 * Return: Char
 */
 
-char *read_input(void)
+char *read_input(char **input, size_t *bufferinput)
 {
-char *input = NULL;
-size_t bufferinput = 0;
-ssize_t readchar;
-readchar = getline(&input, &bufferinput, stdin);
+ssize_t readchar = 0;
+readchar = getline(input, bufferinput, stdin);
 
 	/* check if getline works */
-	if (readchar == -1)
+	if (readchar == EOF)
 	{
-		/* non zero if is set */
-		/* change verification method */
-		if (readchar == EOF)
-		{
-			/* reach the end */
-			exit(EXIT_SUCCESS);
-		}
-		else
-		{
-			/* any error */
-			perror("read_input");
-			exit(EXIT_FAILURE);
-		}
+		/* reach the end */
+		free(*input);
+		exit(EXIT_SUCCESS);
 	}
-return (input);
+return (*input);
 }

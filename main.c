@@ -49,11 +49,11 @@ int main(void)
 /* config */
 /* loop for commands */
 
-	int j = 0;
 	int state;
-	char *input;
+	char *input = NULL;
 	char **args;
 	char *builtinlist[] = {"env", "exit"};
+	size_t bufferinput = 0;
 
 	do {
 	/* define prompt */
@@ -61,17 +61,17 @@ int main(void)
 	{
 		write(1, JR_PROMPT, 2);
 	}
-	input = read_input();
+	input = read_input(&input, &bufferinput);
 	/* start tokenization process */
 	args = break_input(input);
 	/* obtain info to break the loop */
 	state = run_command(args, builtinlist);
 
 	/* cleanup, free memory, etc */
-	free(input);	
+	
 	free(args);
 	/* again */
 	} while (state);
-
+	free(input);
 return (EXIT_SUCCESS);
 }
