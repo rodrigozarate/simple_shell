@@ -8,29 +8,23 @@
 
 /**
 * bi_exit - exit
-* @args: double poniter
 * Return: always zero to change state
 */
 
-int bi_exit(char **args)
+int bi_exit()
 {
-char **w_args;
-w_args = args;
 	return (0);
 }
 
 /**
 * bi_env - gets environ vars
-* @args: double poniter
 * Return: always zero
 */
 
-int bi_env(char **args)
+int bi_env()
 {
 int i = 0;
 int str_len;
-char **w_args;
-w_args = args;
 
 	/* get the environ */
 	while (environ[i] != NULL)
