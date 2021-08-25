@@ -46,7 +46,7 @@ int str_len;
 * Return: EXIT_SUCCESS
 */
 
-int main(int argc, char **argv)
+int main()
 {
 /* config */
 /* loop for commands */
@@ -55,11 +55,6 @@ int main(int argc, char **argv)
 	char *input;
 	char **args;
 	char *builtinlist[] = {"env", "exit"};
-	int h_args;
-	char **h_argv;
-
-h_args = argc;
-h_argv = argv;
 
 	do {
 	/* define prompt */
