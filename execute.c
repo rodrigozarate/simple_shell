@@ -6,7 +6,6 @@
  * Return: 0
  */
 
-
 int exec(char **arguments)
 {
 	pid_t pid = 0; /**Child process id*/
