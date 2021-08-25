@@ -14,9 +14,5 @@
 
 int countstr(char *string)
 {
-int cs;
-
-	for (cs = 0; string[cs] != '\0'; cs++)
-		;
-return (cs);
+concatStr(string);
 }
