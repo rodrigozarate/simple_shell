@@ -49,6 +49,7 @@ int main(void)
 /* config */
 /* loop for commands */
 
+	int j = 0;
 	int state;
 	char *input;
 	char **args;
@@ -67,7 +68,7 @@ int main(void)
 	state = run_command(args, builtinlist);
 
 	/* cleanup, free memory, etc */
-	free(input);
+	free(input);	
 	free(args);
 	/* again */
 	} while (state);
