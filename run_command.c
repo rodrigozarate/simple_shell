@@ -9,7 +9,7 @@
 /**
 * run_command - Run the given command
 * @args: pointer
-* @bilist: char built in list
+* @builtinlist: char built in list
 * Return: war
 */
 
