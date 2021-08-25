@@ -56,7 +56,10 @@ int main(void)
 
 	do {
 	/* define prompt */
-	write(1, JR_PROMPT, 2);
+	if (isatty(0))
+	{
+		write(1, JR_PROMPT, 2);
+	}
 	input = read_input();
 	/* start tokenization process */
 	args = break_input(input);
