@@ -24,6 +24,7 @@ char *getVariableFromEnviron(char *variableName)
 	return (NULL);
 }
 
+
 /**
  * tokenize - extract directories within path
  * @string: directories name
