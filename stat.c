@@ -3,17 +3,16 @@
 
 /**
  * statFunction - find and excecute the command in the path.
- * @argc: cant arguments
- * @argv: list arguments
+ * @args: arguments
+ * @stringsPath: divided PATH
  * Return: 0: exit or -1: failed
  */
-int statFunction(int argc, char **argv)
+int statFunction(char **args, char **stringsPath)
 {
 	struct stat statbuf;
-	int error = 0;
-	int pid, execute, buffer, args;
+	int pid, execute, buffer;
 
-	if (stat(argv[0], &statbuf) == -1)
+	if (stat(stringsPath[0], &statbuf) == -1)
 	{
 		perror("not found");
 		exit(1);
@@ -36,6 +35,6 @@ int statFunction(int argc, char **argv)
 	else
 	{
 		perror("not found");
-		return (error);
+		return (0);
 	}
 }
