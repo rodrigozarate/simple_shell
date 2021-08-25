@@ -17,7 +17,7 @@ int run_command(char **args, char **builtinlist)
 {
 int i;
 
-int (*builtinfunc[])(char **) = {&bi_env, &bi_exit};
+int (*builtinfunc[])() = {&bi_env, &bi_exit};
 
 	if (args[0] == NULL)
 	{
