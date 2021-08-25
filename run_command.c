@@ -9,7 +9,7 @@
 /**
 * run_command - Run the given command
 * @args: pointer
-* @bilist: char built in list
+* @builtinlist: char built in list
 * Return: war
 */
 
@@ -17,7 +17,7 @@ int run_command(char **args, char **builtinlist)
 {
 int i;
 
-int (*builtinfunc[])(char **) = {&bi_env, &bi_exit};
+int (*builtinfunc[])() = {&bi_env, &bi_exit};
 
 	if (args[0] == NULL)
 	{

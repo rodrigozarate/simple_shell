@@ -11,7 +11,7 @@
 * Return: always zero to change state
 */
 
-int bi_exit()
+int bi_exit(void)
 {
 	return (0);
 }
@@ -21,7 +21,7 @@ int bi_exit()
 * Return: always zero
 */
 
-int bi_env()
+int bi_env(void)
 {
 int i = 0;
 int str_len;
@@ -41,12 +41,10 @@ int str_len;
 
 /**
 * main - Entry point
-* @argc: int
-* @argv: char double pointer
 * Return: EXIT_SUCCESS
 */
 
-int main(int argc, char **argv)
+int main(void)
 {
 /* config */
 /* loop for commands */
@@ -55,11 +53,6 @@ int main(int argc, char **argv)
 	char *input;
 	char **args;
 	char *builtinlist[] = {"env", "exit"};
-	int h_args;
-	char **h_argv;
-
-h_args = argc;
-h_argv = argv;
 
 	do {
 	/* define prompt */

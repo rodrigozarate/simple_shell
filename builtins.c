@@ -8,6 +8,7 @@
 
 /**
 * builtins - List of builtins
+* @builtinlist: char duoble pointer
 * Return: int
 */
 

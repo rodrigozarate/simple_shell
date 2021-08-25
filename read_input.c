@@ -16,9 +16,10 @@ char *read_input(void)
 char *input = NULL;
 size_t bufferinput = 0;
 ssize_t readchar;
+readchar = getline(&input, &bufferinput, stdin);
 
 	/* check if getline works */
-	if ((readchar = getline(&input, &bufferinput, stdin)) == -1)
+	if (readchar == -1)
 	{
 		/* non zero if is set */
 		/* change verification method */
