@@ -17,6 +17,7 @@ int rocket(char **args)
 pid_t pid, w_pid;
 int state;
 char **env = environ;
+int here = 0;
 
 	pid = fork();
 	if (pid == 0)
@@ -39,6 +40,10 @@ char **env = environ;
 		/* Parent process */
 		do {
 			w_pid = waitpid(pid, &state, WUNTRACED);
+			if (w_pid == 0)
+			{
+				here++;
+			}
 		} while (!WIFEXITED(state) && !WIFSIGNALED(state));
 	}
 /* always 1 */
