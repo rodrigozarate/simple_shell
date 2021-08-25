@@ -41,8 +41,6 @@ int str_len;
 
 /**
 * main - Entry point
-* @argc: int
-* @argv: char double pointer
 * Return: EXIT_SUCCESS
 */
 
