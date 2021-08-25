@@ -17,7 +17,7 @@ int rocket(char **args)
 pid_t pid, w_pid;
 int state;
 char **env = environ;
-here = 0;
+int here = 0;
 
 	pid = fork();
 	if (pid == 0)
