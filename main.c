@@ -11,7 +11,7 @@
 * Return: always zero to change state
 */
 
-int bi_exit()
+int bi_exit(void)
 {
 	return (0);
 }
@@ -21,7 +21,7 @@ int bi_exit()
 * Return: always zero
 */
 
-int bi_env()
+int bi_env(void)
 {
 int i = 0;
 int str_len;
@@ -46,7 +46,7 @@ int str_len;
 * Return: EXIT_SUCCESS
 */
 
-int main()
+int main(void)
 {
 /* config */
 /* loop for commands */
