@@ -134,9 +134,14 @@ Type **exit** at the prompt of ./hsh program
 The prompt get back to the TERMINAL
 
 #### Special Thanks to
-https://github.com/juanescorreap and https://github.com/Cr1st14n0l101
-for the help
 
-Made the Holberton way always give first.
+	https://github.com/JuanDAC
+	https://github.com/juanescorreap
+	https://github.com/Cr1st14n0l101
+	https://github.com/anversa-pro
+
+for all the help
+
+## Made the Holberton way, always give first.
 
 
