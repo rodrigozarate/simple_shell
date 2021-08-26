@@ -13,7 +13,7 @@
 
 int bi_exit(void)
 {
-	return (EXIT_SUCCESS);
+	exit(2);
 }
 
 /**
