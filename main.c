@@ -13,7 +13,7 @@
 
 int bi_exit(void)
 {
-	exit(2);
+	return(0);
 }
 
 /**
@@ -29,7 +29,7 @@ int str_len;
 	/* get the environ */
 	while (environ[i] != NULL)
 	{
-		 /* walk the environ to count */
+		/* walk the environ to count */
 		str_len = countstr(environ[i]);
 		/* print the environ */
 		write(1, environ[i], str_len);
@@ -66,7 +66,6 @@ int main(void)
 	args = break_input(input);
 	/* obtain info to break the loop */
 	state = run_command(args, builtinlist);
-
 	/* cleanup, free memory, etc */
 
 	free(args);
