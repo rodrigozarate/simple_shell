@@ -28,5 +28,5 @@ int str_comp(char *str_a, char *str_b);
 /* to do PATH */
 char *getVariableFromEnviron(char *variableName);
 char *str_concat(char *s1, char *s2);
-char **tokenize(char *string);[<8;50;30m]
+char **tokenize(char *string);
 #endif /* SIMPLE_SHELL_H */
