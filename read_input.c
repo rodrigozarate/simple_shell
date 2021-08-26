@@ -25,5 +25,10 @@ readchar = getline(input, bufferinput, stdin);
 		free(*input);
 		exit(EXIT_SUCCESS);
 	}
+	if (readchar == -1)
+	{
+		free(*input);
+		exit(EXIT_FAILURE);
+	}
 return (*input);
 }
