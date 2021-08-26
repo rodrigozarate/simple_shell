@@ -12,28 +12,29 @@
 int statFunction(char **stringsPath, char **args)
 {
 	struct stat statbuf;
+	int i;
+	int state;
 
-	if (stat(stringsPath, &statbuf) == -1)
+	state = stat(stringsPath, &statbuf);
+
+	if (state == -1)
 	{
 		perror("not found");
 		exit(1);
 	}
-	if (statbuf.st_mode &  S_IFDIR)
-	{
-		pid = fork();
-		if (pid == -1)
-		{
-			perror("Error:");
-			return (1);
-		}
-		if (pid == 0)
-		{
-			rocket(args);
-		}
-	}
 	else
 	{
-		perror("not found");
+		for (i = 0; state != -1; i++)
+		{
+			if (statbuf.st_mode &  S_IFDIR)
+			{
+				rocket(args);
+			}
+			else
+			{
+				perror("not found");
+			}
+		}
 	}
-	return (0);
-}
+			return (0);
+		}
