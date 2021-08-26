@@ -18,21 +18,27 @@ pid_t pid, w_pid;
 int state;
 char **env = environ;
 int here = 0;
-char *concat;
-
+char concat;
+int active;
+struct stat statbuf;
 char *variablePath = getVariableFromEnviron(**env);
-char **pathdivided = **tokenize(**env);
+char **pathdivided = **tokenize(**variablePath);
 
 int i = 0;
 while (pathdivided[i] != NULL)
 {
-concat = *str_concat(char **pathdivided[i], char *args);
-i++
+	concat = *str_concat(*pathdivided[i], *args);
+	i++;
 }
 
-statFunction(char **pathdivided, char **concat);
-
-	pid = fork();
+active = statFunction(**pathdivided[i], **concat[i]);
+	if (active == -1)
+{
+		perror("Error");
+}
+	else
+	{
+pid = fork();
 	if (pid == 0)
 	{
 		/* on path args should be changed */
@@ -59,6 +65,7 @@ statFunction(char **pathdivided, char **concat);
 			}
 		} while (!WIFEXITED(state) && !WIFSIGNALED(state));
 	}
-/* always 1 */
+	}
+	/* always 1 */
 return (1);
 }
