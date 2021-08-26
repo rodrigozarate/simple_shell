@@ -16,7 +16,7 @@ int rocket(char **args)
 {
 	pid_t pid;
 	char *concat;
-	struct stat statbuf; 
+	struct stat statbuf;
 	char *variablePath = getVariableFromEnviron("PATH");
 	char **pathdivided = tokenize(variablePath);
 	char *concat_temp;
@@ -49,5 +49,5 @@ for (i = 0; pathdivided[i] != NULL; i++)
 	free(concat_temp);
 	free(concat);
 }
-return (0);
+return (1);
 }
