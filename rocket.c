@@ -16,17 +16,15 @@ int rocket(char **args)
 {
 	pid_t pid;
 	char *concat;
-	struct stat statbuf; //error al compilar porque espacio desconocido
+	struct stat statbuf; 
 	char *variablePath = getVariableFromEnviron("PATH");
 	char **pathdivided = tokenize(variablePath);
 	char *concat_temp;
-	int i = 0;
-	int j = 0;
-	int x = 0;
+	int i = 0, status = 0, execute = 0;
 
 for (i = 0; pathdivided[i] != NULL; i++)
 {
-	concat_temp = str_concat(pathdivided[i], "/")
+	concat_temp = str_concat(pathdivided[i], "/");
 	concat = str_concat(concat_temp, *args);
 	if (stat(concat, &statbuf) == 0)
 	{
