@@ -23,7 +23,9 @@ int builtins(char **builtinlist);
 /* util */
 int countstr(char *string);
 int str_comp(char *str_a, char *str_b);
-char *str_concat(char *s1, char *s2);
 /* to do PATH */
+char getVariableFromEnviron(char variableEnv);
+char **tokenize(char *path);
+char *str_concat(char *pathdivided, char *args);
 
 #endif /* SIMPLE_SHELL_H */

@@ -18,12 +18,19 @@ pid_t pid, w_pid;
 int state;
 char **env = environ;
 int here = 0;
+char *concat;
 
-char *variablePath = getVariableFromEnviron(char *variableEnv);
-char **pathdivided = **tokenize(char *path);
-char *concat = *str_concat(char **pathdivided, char *args);
+char *variablePath = getVariableFromEnviron(**env);
+char **pathdivided = **tokenize(**env);
 
-statFunction(char **pathdivided, char **args);
+int i = 0;
+while (pathdivided[i] != NULL)
+{
+concat = *str_concat(char **pathdivided[i], char *args);
+i++
+}
+
+statFunction(char **pathdivided, char **concat);
 
 	pid = fork();
 	if (pid == 0)
