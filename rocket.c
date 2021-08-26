@@ -19,6 +19,12 @@ int state;
 char **env = environ;
 int here = 0;
 
+char *variablePath = getVariableFromEnviron(char *variableEnv);
+char **pathdivided = **tokenize(char *path);
+char *concat = *str_concat(char **pathdivided, char *args);
+
+statFunction(char **pathdivided, char **args);
+
 	pid = fork();
 	if (pid == 0)
 	{
