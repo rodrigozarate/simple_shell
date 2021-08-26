@@ -20,18 +20,32 @@ char **env = environ;
 int here = 0;
 char concat;
 int active;
-struct stat statbuf;
-char *variablePath = getVariableFromEnviron(**env);
-char **pathdivided = **tokenize(**variablePath);
+struct stat statbuf; //error al compilar porque espacio desconocido
+char *variablePath = getVariableFromEnviron("PATH");
+char **pathdivided = tokenize(variablePath);
+char concat_temp;
 
 int i = 0;
-while (pathdivided[i] != NULL)
+int j = 0;
+int x = 0;
+
+for (i = 0; concat_temp[i] != NULL; i++)
 {
-	concat = *str_concat(*pathdivided[i], *args);
-	i++;
+	concat = str_concat(*concat_temp[i], *args);
+	for (j = 0; pathdivided[j] != NULL; j++)
+	{
+		concat_temp[] = str_concat(*pathdivided[i][j], "/");
+	}
+	for (x = 0; temp[x] != NULL; x++)
+	{
+		free(concat_temp[x]);
+	}
 }
 
-active = statFunction(**pathdivided[i], **concat[i]);
+i = 0;
+j = 0;
+
+active = statFunction(**pathdivided[i], concat[j]);
 	if (active == -1)
 {
 		perror("Error");
@@ -43,7 +57,7 @@ pid = fork();
 	{
 		/* on path args should be changed */
 		/* its child */
-		if (execve(args[0], args, env) == -1)
+		if (execve(concat[0], args, env) == -1)
 		{
 			perror("Error");
 		}

@@ -3,7 +3,7 @@
 /**
  * getVariableFromEnviron - Find path
  * @variableName: env variable name
- * return: return path-line
+ * return: pathline
  */
 
 char *getVariableFromEnviron(char *variableName)
@@ -27,7 +27,7 @@ char *getVariableFromEnviron(char *variableName)
 /**
  * tokenize - extract directories within path
  * @string: directories name
- * return: return directories within the path
+ * return: directories within the path
  */
 
 char **tokenize(char *string)
