@@ -64,6 +64,7 @@ int main(void)
 	/* start tokenization process */
 	args = break_input(input);
 	/* obtain info to break the loop */
+
 	state = run_command(args, builtinlist);
 
 	/* cleanup, free memory, etc */

@@ -33,6 +33,14 @@ int (*builtinfunc[])() = {&bi_env, &bi_exit};
 			/* set the corresponding function */
 			return ((*builtinfunc[i])(args));
 		}
+		else
+		{
+			char *variableName = getVariableFromEnviron(char *variableName);
+			char **tokenized = **tokenize(char *string);
+			*str_concat(char *s1, char *s2);
+			statFunction(char **stringsPath, char **args);
+			
+		}
 	}
 /* ignition secuence started */
 return (rocket(args));
