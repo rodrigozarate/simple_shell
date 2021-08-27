@@ -24,6 +24,7 @@ char *token;
 
 	if (!alltokens)
 	{
+		free(alltokens);
 		exit(EXIT_FAILURE);
 	}
 
@@ -45,12 +46,13 @@ char *token;
 			free(talltok);
 			if (!alltokens)
 			{
+				free(alltokens);
 				exit(EXIT_FAILURE);
 			}
 		}
 	token = strtok(NULL, TOKEN_DELIMITATOR);
 	}
-/* end */
+/* end all now */
 alltokens[position] = NULL;
 /* send to execute command */
 return (alltokens);
