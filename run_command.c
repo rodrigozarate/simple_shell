@@ -1,23 +1,24 @@
 /*
-* run_command.c - Call functions of shell project
-* Author: Joana Casallas and Rodrigo Zárate A
-* Date: August 21, 2021
-*/
+ * run_command.c - Call functions of shell project
+ * Author: Joana Casallas and Rodrigo Zárate A
+ * Date: August 21, 2021
+ */
 
 #include "simple_shell.h"
 
 /**
-* run_command - Run the given command
-* @args: pointer
-* @builtinlist: char built in list
-* Return: war
-*/
+ * run_command - Run the given command
+ * @args: pointer
+ * @builtinlist: char built in list
+ * Return: war
+ */
 
 int run_command(char **args, char **builtinlist)
 {
+
 int i, lar;
 
-int (*builtinfunc[])() = {&bi_env, &bi_exit};
+	int (*builtinfunc[])() = {&bi_env, &bi_exit};
 
 lar = sizeof(builtinfunc)/sizeof(builtinfunc[0]);
 
@@ -36,6 +37,6 @@ lar = sizeof(builtinfunc)/sizeof(builtinfunc[0]);
 			return ((*builtinfunc[i])(args));
 		}
 	}
-/* ignition secuence started */
-return (rocket(args));
+	/* ignition secuence started */
+	return (rocket(args));
 }
