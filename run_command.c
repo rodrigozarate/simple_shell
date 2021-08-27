@@ -15,9 +15,11 @@
 
 int run_command(char **args, char **builtinlist)
 {
-int i;
+int i, lar;
 
 int (*builtinfunc[])() = {&bi_env, &bi_exit};
+
+lar = sizeof(builtinfunc)/sizeof(builtinfunc[0]);
 
 	if (args[0] == NULL)
 	{
@@ -25,7 +27,7 @@ int (*builtinfunc[])() = {&bi_env, &bi_exit};
 		return (1);
 	}
 	/* walk array of builtins */
-	for (i = 0; i <= builtins(builtinlist); i++)
+	for (i = 0; i < lar; i++)
 	{
 		/* 0, if the s1 and s2 are equal */
 		if (str_comp(args[0], builtinlist[i]) == 0)
