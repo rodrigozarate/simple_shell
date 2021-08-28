@@ -13,7 +13,8 @@
 
 int bi_exit(void)
 {
-	exit(2);
+	/* git change */
+	return(0);
 }
 
 /**
