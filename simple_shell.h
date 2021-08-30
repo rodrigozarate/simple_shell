@@ -24,7 +24,7 @@ int bi_env(void);
 int bi_exit(void);
 int builtins(char **builtinlist);
 /* util */
-int countstr(char *string);
+int _strlen(char *string);
 int str_comp(char *str_a, char *str_b);
 /* to do PATH */
 char *getVariableFromEnviron(char *variableName);
