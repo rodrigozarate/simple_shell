@@ -1,5 +1,5 @@
 /*
- * countstr.c - count chars of strings
+ * _strlen.c - count chars of strings
  * Author: Joana Casallas and Rodrigo Zárate Algecira
  * Date: August 24, 2021
  */
@@ -7,16 +7,16 @@
 #include "simple_shell.h"
 
 /**
- * countstr - count chars of string
+ * _strlen - count chars of string
  * @string: char pointer
  * Return: int
  */
 
-int countstr(char *string)
+int _strlen(char *string)
 {
-	int cs;
+	int i;
 
-	for (cs = 0; string[cs] != '\0'; cs++)
+	for (i = 0; string[i] != '\0'; i++)
 		;
-	return (cs);
+	return (i);
 }

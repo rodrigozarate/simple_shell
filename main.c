@@ -31,7 +31,7 @@ int str_len;
 	while (environ[i] != NULL)
 	{
 		/* walk the environ to count */
-		str_len = countstr(environ[i]);
+		str_len = _strlen(environ[i]);
 		/* print the environ */
 		write(1, environ[i], str_len);
 		write(1, "\n", 2);
