@@ -56,8 +56,8 @@ int main(void)
 	char *builtinlist[] = {"env", "exit"};
 	size_t bufferinput = 0;
 
-	do {
 	/* define prompt */
+	do {
 	if (isatty(0))
 	{
 		write(1, JR_PROMPT, 2);
